@@ -1,1 +1,0 @@
-CREATE DATABASE account_manager_db;
