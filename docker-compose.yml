@@ -7,19 +7,23 @@ services:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       TZ: Asia/Tokyo
     volumes:
-      - ./src/account_manager:/var/www/html
+      - ./src/your_repository:/var/www/html
       - vendor-store:/var/www/html/vendor
       - ./php/000-default.conf:/etc/apache2/sites-available/000-default.conf
     networks:
-      - account_manager
+      - your_repository
       - my_proxy_network
+      - my_infra_network
 
 volumes:
   vendor-store:
 
 networks:
-  account_manager:
-    name: account_manager
+  your_repository:
+    name: your_repository
   my_proxy_network:
     external: true
     name: my_proxy_network
+  my_infra_network:
+    external: true
+    name: my_infra_network
