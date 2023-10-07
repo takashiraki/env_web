@@ -1,5 +1,5 @@
 {
-    "name": "repozitory_name",
+    "name": "repository_name",
     "dockerComposeFile": [
         "./../docker-compose.yml"
     ],
@@ -7,6 +7,7 @@
     "workspaceFolder": "/var/www/html",
     "extensions": [
         "xdebug.php-debug",
+        "junstyle.php-cs-fixer",
         "bmewburn.vscode-intelephense-client",
         "oderwat.indent-rainbow",
         "neilbrayfield.php-docblocker",
