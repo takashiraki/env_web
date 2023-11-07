@@ -8,7 +8,6 @@ RUN apt-get update \
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY php.ini /usr/local/etc/php/
-COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY --from=node:18.16 /usr/local/bin /usr/local/bin
 COPY --from=node:18.16 /usr/local/lib /usr/local/lib
