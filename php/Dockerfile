@@ -1,15 +1,13 @@
-FROM php:8.1-apache
+FROM php:8.1-fpm
 
 RUN apt-get update \
     && apt-get install -y unzip libpq-dev git \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
-    && docker-php-ext-install mysqli pdo_mysql opcache \
-    && a2enmod rewrite
+    && docker-php-ext-install mysqli pdo_mysql opcache
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY php.ini /usr/local/etc/php/
-COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY --from=node:18.16 /usr/local/bin /usr/local/bin
 COPY --from=node:18.16 /usr/local/lib /usr/local/lib
