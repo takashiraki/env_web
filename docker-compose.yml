@@ -17,6 +17,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./src/your_repository/public:/var/www/html/public
+      - html:/usr/share/nginx/html
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
@@ -29,6 +30,7 @@ services:
 
 volumes:
   vendor-store:
+  html:
 
 networks:
   your_repository:
