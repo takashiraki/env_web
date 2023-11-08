@@ -19,6 +19,9 @@ services:
       - ./src/your_repository/public:/var/www/html/public
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      CERT_NAME: ${CERT_NAME}
       TZ: Asia/Tokyo
     networks:
       - your_repository
