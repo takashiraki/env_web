@@ -1,10 +1,11 @@
-FROM php:8.1-fpm
+FROM php:8.1-apache
 
 RUN apt-get update \
     && apt-get install -y unzip libpq-dev git \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
-    && docker-php-ext-install mysqli pdo_mysql opcache
+    && docker-php-ext-install mysqli pdo_mysql opcache \
+    && a2enmod rewrite
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY php.ini /usr/local/etc/php/
