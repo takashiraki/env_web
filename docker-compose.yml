@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    container_name: your_php
+    container_name: ${CONTAINER_NAME}
     build: ./php
     ports:
       - 80
