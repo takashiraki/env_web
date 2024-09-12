@@ -1,0 +1,39 @@
+{
+    "name": "repository_name",
+    "dockerComposeFile": [
+        "./../docker-compose.yml"
+    ],
+    "service": "php",
+    "workspaceFolder": "/var/www/html",
+    "extensions": [
+        "xdebug.php-debug",
+        "junstyle.php-cs-fixer",
+        "bmewburn.vscode-intelephense-client",
+        "oderwat.indent-rainbow",
+        "neilbrayfield.php-docblocker",
+        "shufo.vscode-blade-formatter",
+        "onecentlin.laravel-blade",
+        "onecentlin.laravel5-snippets",
+        "cjhowe7.laravel-blade",
+        "austenc.laravel-blade-spacer",
+        "purocean.drawio-preview",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "yzhang.markdown-all-in-one",
+        "PKief.material-icon-theme",
+    ],
+    "settings": {
+        "[php]": {
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+        },
+        "php-cs-fixer.executablePath": "/var/www/html/vendor/bin/php-cs-fixer",
+        "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+        },
+        "bladeFormatter.format.sortTailwindcssClasses": true,
+        "bladeFormatter.format.wrapAttributes": "preserve"
+    }
+}
