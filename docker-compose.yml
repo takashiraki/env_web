@@ -4,10 +4,8 @@ services:
   php:
     container_name: ${CONTAINER_NAME}
     build: ./php
-    ports:
-      - 80
     volumes:
-      - ./src/your_repository:/var/www/html
+      - ./${REPOSITORY_PATH}:/var/www/html
       - vendor-store:/var/www/html/vendor
       - ./php/000-default.conf:/etc/apache2/sites-available/000-default.conf
     environment:
@@ -18,7 +16,7 @@ services:
       CERT_NAME: ${CERT_NAME}
       TZ: Asia/Tokyo
     networks:
-      - your_repository_network
+      - my_laravel_network
       - my_infra_network
       - my_proxy_network
 
@@ -26,8 +24,8 @@ volumes:
   vendor-store:
 
 networks:
-  your_repository_network:
-    name: your_repository_network
+  my_laravel_network:
+    name: my_laravel_network
   my_proxy_network:
     external: true
     name: my_proxy_network
