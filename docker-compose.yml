@@ -3,7 +3,7 @@ version: '3'
 services:
   php:
     container_name: ${CONTAINER_NAME}
-    build: ./php
+    build: ./${DOCKERFILE_PATH}
     volumes:
       - ./${REPOSITORY_PATH}:/var/www/html
       - vendor-store:/var/www/html/vendor
